@@ -9,7 +9,7 @@ Math Rush je 2D matematička igra u kojoj je cilj da igrač za što kraće vreme
 
 ### Napomena za saradnike
 
-Dokumentacija, komentari i sav prateći kod moraju biti pisani na engleskom jeziku.
+Dokumentacija, komentari i sav prateći kod, kao i komiti moraju biti pisani na engleskom jeziku.
 
 ## Uputstvo za korisnike
 

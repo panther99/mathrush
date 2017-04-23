@@ -4,7 +4,6 @@ Player = {}
 
 function Player:new()
     local p = {
-        lives = 3,
         width = 30,
         height = 30,
         x = Space.window.width / 2,
@@ -38,9 +37,4 @@ end
 -- @return boolean
 function Player:reachedBottomBorder()
     return Space:reachedBottomBorder(self.y, self.height)
-end
-
--- Executes when player dies.
-function Player:die()
-    self.lives = self.lives - 1
 end

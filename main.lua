@@ -1,9 +1,13 @@
 require 'player'
-
-timer = 60
+require 'assets'
 
 function love.load()
    player = Player:new()
+   assets = Assets:new()
+
+   timer = 60
+
+   timerFont = assets:newFont("digital-7.ttf", 20)
 end
 
 function love.draw()
@@ -23,6 +27,7 @@ function love.draw()
     love.graphics.rectangle("fill", 30, Space.window.height - 30, Space.window.width, 30) -- bottom
 
     -- draws the timer
+    love.graphics.setFont(timerFont)
     love.graphics.print(math.floor(timer), 100, 100);
 end
 
