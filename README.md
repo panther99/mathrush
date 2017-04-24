@@ -14,3 +14,7 @@ Dokumentacija, komentari i sav prateći kod, kao i komiti moraju biti pisani na 
 ## Uputstvo za korisnike
 
 Igra je još uvek u alpha fazi razvoja. Prva beta verzija biće dostupna najkasnije do kraja jula za Windows, Linux i macOS.
+
+## Zasluge
+
+- Muzika: [Eric Skiff](http://ericskiff.com)

@@ -33,7 +33,7 @@ end
 -- Returns image asset.
 -- @return Image
 function Assets:newImage(name)
-    local image = self.audioDirectory .. name
+    local image = self.imagesDirectory .. name
     return love.graphics.newImage(image)
 end
 

@@ -9,7 +9,7 @@ function Player:new()
         x = Space.window.width / 2,
         y = Space.window.height / 2,
         speed = 2,
-        speedBoost = 4
+        score = 0
     }
     setmetatable(p, { __index = Player })
     return p

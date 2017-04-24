@@ -11,7 +11,8 @@ Space = {
         topWall      = { width = love.graphics.getWidth(), height = 30 },
         bottomWall   = { width = love.graphics.getWidth(), height = 30 },
         leftWall     = { width = 30, height = love.graphics.getHeight() },
-        rightWall    = { width = 30, height = love.graphics.getHeight() }
+        rightWall    = { width = 30, height = love.graphics.getHeight() },
+        door         = { width = 60, height = 5 }
     }
 }
 

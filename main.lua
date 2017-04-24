@@ -8,6 +8,9 @@ function love.load()
    timer = 60
 
    timerFont = assets:newFont("digital-7.ttf", 20)
+   backgroundMusic = assets:newAudio("background.mp3")
+
+   backgroundMusic:play()
 end
 
 function love.draw()
@@ -26,9 +29,19 @@ function love.draw()
     love.graphics.rectangle("fill", Space.window.width - 30, 30, 30, Space.window.height) -- right
     love.graphics.rectangle("fill", 30, Space.window.height - 30, Space.window.width, 30) -- bottom
 
+    -- draws the doors
+    love.graphics.setColor(128, 0, 0)
+    love.graphics.rectangle("fill", 190, 30, 50, 5) -- top left door 
+    love.graphics.rectangle("fill", 375, 30, 50, 5) -- top middle door
+    love.graphics.rectangle("fill", 560, 30, 50, 5) -- top right door
+
+    love.graphics.rectangle("fill", 190, Space.window.height - 35, 50, 5) -- bottom left door
+    love.graphics.rectangle("fill", 375, Space.window.height - 35, 50, 5) -- bottom middle door
+    love.graphics.rectangle("fill", 560, Space.window.height - 35, 50, 5) -- bottom right door
+
     -- draws the timer
     love.graphics.setFont(timerFont)
-    love.graphics.print(math.floor(timer), 100, 100);
+    love.graphics.print(math.floor(timer), 100, Space.window.height / 2);
 end
 
 function love.update(dt)
