@@ -10,6 +10,7 @@ function love.load()
    timerFont = assets:newFont("digital-7.ttf", 20)
    backgroundMusic = assets:newAudio("background.mp3")
 
+   backgroundMusic:setLooping(true)
    backgroundMusic:play()
 end
 
@@ -47,27 +48,84 @@ end
 function love.update(dt)
     timer = timer - 0.015
 
+    -- this should be refactored and bringed to separate function
     if love.keyboard.isDown("up") then
         if not player:reachedTopBorder() then
-            player.y = player.y - player.speed
+            if player:reachedTopLeftDoor() then
+                player:returnToStart()
+            elseif player:reachedTopMiddleDoor() then
+                player:returnToStart()
+            elseif player:reachedTopRightDoor() then
+                player:returnToStart()
+            elseif player:reachedBottomLeftDoor() then
+                player:returnToStart()
+            elseif player:reachedBottomMiddleDoor() then
+                player:returnToStart()
+            elseif player:reachedBottomRightDoor() then
+                player:returnToStart()
+            else
+                player.y = player.y - player.speed
+            end
         end
     end
 
     if love.keyboard.isDown("down") then
         if not player:reachedBottomBorder() then
-            player.y = player.y + player.speed
+            if player:reachedTopLeftDoor() then
+                player:returnToStart()
+            elseif player:reachedTopMiddleDoor() then
+                player:returnToStart()
+            elseif player:reachedTopRightDoor() then
+                player:returnToStart()
+            elseif player:reachedBottomLeftDoor() then
+                player:returnToStart()
+            elseif player:reachedBottomMiddleDoor() then
+                player:returnToStart()
+            elseif player:reachedBottomRightDoor() then
+                player:returnToStart()
+            else
+                player.y = player.y + player.speed
+            end
         end
     end
 
     if love.keyboard.isDown("left") then
         if not player:reachedLeftBorder() then
-            player.x = player.x - player.speed
+            if player:reachedTopLeftDoor() then
+                player:returnToStart()
+            elseif player:reachedTopMiddleDoor() then
+                player:returnToStart()
+            elseif player:reachedTopRightDoor() then
+                player:returnToStart()
+            elseif player:reachedBottomLeftDoor() then
+                player:returnToStart()
+            elseif player:reachedBottomMiddleDoor() then
+                player:returnToStart()
+            elseif player:reachedBottomRightDoor() then
+                player:returnToStart()
+            else
+                player.x = player.x - player.speed
+            end
         end
     end
 
     if love.keyboard.isDown("right") then
         if not player:reachedRightBorder() then
-            player.x = player.x + player.speed
+            if player:reachedTopLeftDoor() then
+                player:returnToStart()
+            elseif player:reachedTopMiddleDoor() then
+                player:returnToStart()
+            elseif player:reachedTopRightDoor() then
+                player:returnToStart()
+            elseif player:reachedBottomLeftDoor() then
+                player:returnToStart()
+            elseif player:reachedBottomMiddleDoor() then
+                player:returnToStart()
+            elseif player:reachedBottomRightDoor() then
+                player:returnToStart()
+            else
+                player.x = player.x + player.speed
+            end
         end
     end
 end
