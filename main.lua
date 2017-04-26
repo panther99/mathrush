@@ -9,6 +9,7 @@ function love.load()
 
    timerFont = assets:newFont("digital-7.ttf", 20)
    backgroundMusic = assets:newAudio("background.mp3")
+   point = assets:newAudio("point.wav")
 
    backgroundMusic:setLooping(true)
    backgroundMusic:play()
@@ -43,6 +44,10 @@ function love.draw()
     -- draws the timer
     love.graphics.setFont(timerFont)
     love.graphics.print(math.floor(timer), 100, Space.window.height / 2);
+
+    -- draws the score
+    love.graphics.setColor(0, 0, 0)
+    love.graphics.print(player.score, 10, 10)
 end
 
 function love.update(dt)
@@ -53,16 +58,22 @@ function love.update(dt)
         if not player:reachedTopBorder() then
             if player:reachedTopLeftDoor() then
                 player:returnToStart()
+                point:play()
             elseif player:reachedTopMiddleDoor() then
                 player:returnToStart()
+                point:play()
             elseif player:reachedTopRightDoor() then
                 player:returnToStart()
+                point:play()
             elseif player:reachedBottomLeftDoor() then
                 player:returnToStart()
+                point:play()
             elseif player:reachedBottomMiddleDoor() then
                 player:returnToStart()
+                point:play()
             elseif player:reachedBottomRightDoor() then
                 player:returnToStart()
+                point:play()
             else
                 player.y = player.y - player.speed
             end
@@ -73,16 +84,22 @@ function love.update(dt)
         if not player:reachedBottomBorder() then
             if player:reachedTopLeftDoor() then
                 player:returnToStart()
+                point:play()
             elseif player:reachedTopMiddleDoor() then
                 player:returnToStart()
+                point:play()
             elseif player:reachedTopRightDoor() then
                 player:returnToStart()
+                point:play()
             elseif player:reachedBottomLeftDoor() then
                 player:returnToStart()
+                point:play()
             elseif player:reachedBottomMiddleDoor() then
                 player:returnToStart()
+                point:play()
             elseif player:reachedBottomRightDoor() then
                 player:returnToStart()
+                point:play()
             else
                 player.y = player.y + player.speed
             end
@@ -93,16 +110,22 @@ function love.update(dt)
         if not player:reachedLeftBorder() then
             if player:reachedTopLeftDoor() then
                 player:returnToStart()
+                point:play()
             elseif player:reachedTopMiddleDoor() then
                 player:returnToStart()
+                point:play()
             elseif player:reachedTopRightDoor() then
                 player:returnToStart()
+                point:play()
             elseif player:reachedBottomLeftDoor() then
                 player:returnToStart()
+                point:play()
             elseif player:reachedBottomMiddleDoor() then
                 player:returnToStart()
+                point:play()
             elseif player:reachedBottomRightDoor() then
                 player:returnToStart()
+                point:play()
             else
                 player.x = player.x - player.speed
             end
@@ -113,16 +136,22 @@ function love.update(dt)
         if not player:reachedRightBorder() then
             if player:reachedTopLeftDoor() then
                 player:returnToStart()
+                point:play()
             elseif player:reachedTopMiddleDoor() then
                 player:returnToStart()
+                point:play()
             elseif player:reachedTopRightDoor() then
                 player:returnToStart()
+                point:play()
             elseif player:reachedBottomLeftDoor() then
                 player:returnToStart()
+                point:play()
             elseif player:reachedBottomMiddleDoor() then
                 player:returnToStart()
+                point:play()
             elseif player:reachedBottomRightDoor() then
                 player:returnToStart()
+                point:play()
             else
                 player.x = player.x + player.speed
             end

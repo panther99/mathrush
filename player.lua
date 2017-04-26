@@ -19,6 +19,7 @@ end
 function Player:returnToStart()
     self.x = Space.window.width / 2
     self.y = Space.window.height / 2
+    self.score = self.score + 1
 end
 
 -- Checks if player have reached the left border.
